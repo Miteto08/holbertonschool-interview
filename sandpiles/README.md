@@ -1,5 +1,7 @@
 # Sandpile Simulation
 
+![Sandpile_on_infinite_grid,_3e7_grains](https://github.com/Miteto08/holbertonschool-interview/assets/136317791/3b845aef-aab0-4b16-a15f-cfbb384da9fe)
+
 ## Overview
 Welcome to the Sandpile Simulation! This project explores the fascinating concept of sandpile models, a type of cellular automaton used to study complex systems and self-organized criticality. This Readme provides an overview of the simulation, its purpose, and basic usage guidelines.
 
