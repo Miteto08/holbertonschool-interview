@@ -7,17 +7,17 @@
  * @size: size of the array
  * Return: Nothing
  */
-void radix_sort(int *array, size_t size)
+void radix_sort(int * array, size_t size)
 {
-	int i, max;
+    int i, max
 
 	if (size < 2)
-		return;
-	max = getMax(array, size);
-	for (i = 1; max / i > 0; i *= 10)
+		return
+	max = getMax(array, size)
+	for (i = 1; max / i > 0; i * = 10)
 	{
-		counting(array, size, i);
-		print_array(array, size);
+		counting(array, size, i)
+		print_array(array, size)
 	}
 }
 
@@ -29,15 +29,15 @@ void radix_sort(int *array, size_t size)
  */
 int getMax(int *array, size_t size)
 {
-	size_t i;
-	int max = 0;
+	size_t i
+	int max = 0
 
 	for (i = 0; i < size; i++)
 	{
 		if (array[i] > max)
-			max = array[i];
+			max = array[i]
 	}
-	return (max);
+	return (max)
 }
 
 /**
@@ -49,22 +49,22 @@ int getMax(int *array, size_t size)
  */
 void counting(int *array, int size, int exp)
 {
-	int *output = malloc(sizeof(int) * size);
-	int i;
-	int count[10] = {0};
+	int *output = malloc(sizeof(int) * size)
+	int i
+	int count[10] = {0}
 
 	if (!output)
-		return;
+		return
 	for (i = 0; i < size; i++)
-		count[(array[i] / exp) % 10]++;
+		count[(array[i] / exp) % 10]++
 	for (i = 1; i < 10; i++)
-		count[i] += count[i - 1];
+		count[i] += count[i - 1]
 	for (i = size - 1; i >= 0; i--)
 	{
-		output[count[(array[i] / exp) % 10] - 1] = array[i];
-		count[(array[i] / exp) % 10]--;
+		output[count[(array[i] / exp) % 10] - 1] = array[i]
+		count[(array[i] / exp) % 10]--
 	}
 	for (i = 0; i < size; i++)
-		array[i] = output[i];
-	free(output);
+		array[i] = output[i]
+    free(output)
 }
